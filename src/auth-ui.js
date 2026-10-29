@@ -62,7 +62,7 @@ export function mountAuth(doc) {
     $('#auth-tabs').hidden = Boolean(user);
     trigger.textContent = user ? 'Мой профиль' : 'Войти';
     $('#auth-title').textContent = user ? 'Ваш профиль' : reset ? 'Вернём доступ' : registration ? 'Добро пожаловать!' : 'С возвращением!';
-    $('#auth-description').textContent = user ? 'Ваш аккаунт в Podarkus. Подберём что-нибудь особенное?' : reset ? 'Укажите email вашего аккаунта — отправим ссылку для смены пароля.' : 'Подбор подарков доступен и без входа. Регистрация бесплатна.';
+    $('#auth-description').textContent = user ? 'Ваш аккаунт в Podarkus. Подберём что-нибудь особенное?' : reset ? 'Укажите email вашего аккаунта — отправим ссылку для смены пароля.' : registration ? 'Регистрация бесплатна. После создания аккаунта отправим письмо со ссылкой подтверждения почты. Цифровой код вводить не нужно.' : 'Подбор подарков доступен и без входа. Регистрация бесплатна.';
     form.querySelectorAll('[data-registration]').forEach(node => {
       node.hidden = !registration;
       node.querySelector('input').disabled = !registration;
@@ -169,7 +169,7 @@ export function mountAuth(doc) {
   }));
   $('#resend-verification').addEventListener('click', () => void run(async () => {
     if (!user) return;
-    if (Date.now() < verifyAgainAt) { message('Письмо уже отправлено. Повторить отправку можно через минуту.'); return; }
+    if (Date.now() < verifyAgainAt) { message('Запрос на отправку уже принят. Повторить его можно через минуту.'); return; }
     try {
       await provider.verify(user); verifyAgainAt = Date.now() + 60000;
       message('Сервис принял запрос на отправку. Это ещё не подтверждает доставку в почтовый ящик. В письме будет ссылка; откройте её и нажмите «Я подтвердил email».');
