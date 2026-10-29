@@ -1,0 +1,35 @@
+<dialog id="auth-dialog" aria-labelledby="auth-title" aria-describedby="auth-description">
+  <button type="button" class="close-dialog" aria-label="Закрыть">×</button>
+  <div class="eyebrow">ВАШ PODARKUS</div>
+  <h2 id="auth-title">С возвращением!</h2>
+  <p class="dialog-subtitle" id="auth-description">Подбор подарков доступен и без входа. Регистрация бесплатна.</p>
+  <div class="auth-tabs" id="auth-tabs" role="group" aria-label="Вход или регистрация">
+    <button type="button" data-auth-mode="login" aria-pressed="true">Вход</button>
+    <button type="button" data-auth-mode="register" aria-pressed="false">Регистрация</button>
+  </div>
+  <form id="auth-form" method="post">
+    <fieldset class="auth-fields" disabled><legend class="visually-hidden">Данные аккаунта</legend>
+      <label class="field" data-registration hidden>Ваше имя<input name="name" autocomplete="name" maxlength="60" disabled></label>
+      <label class="field">Email<input name="email" type="email" autocomplete="username" maxlength="254" placeholder="you@example.com" required></label>
+      <label class="field" data-password>Пароль<input name="password" type="password" autocomplete="current-password" maxlength="128" required aria-describedby="password-hint"><small id="password-hint" hidden>От 10 до 128 символов. Можно использовать длинную фразу.</small></label>
+      <label class="field" data-registration hidden>Повторите пароль<input name="confirmation" type="password" autocomplete="new-password" maxlength="128" disabled></label>
+      <button type="button" class="auth-visibility" id="password-visibility" aria-pressed="false">Показать пароль</button>
+      <button class="button" id="auth-submit" type="submit">Войти</button>
+      <button type="button" class="auth-visibility" id="forgot-password">Забыли пароль?</button>
+      <button type="button" class="auth-visibility" id="back-to-login" hidden>Вернуться ко входу</button>
+    </fieldset>
+    <p class="auth-note">Для аккаунта имя, email и пароль передаются в Firebase Authentication (Google) по защищённому соединению. Пароль не сохраняется в коде сайта. <a href="https://policies.google.com/privacy?hl=ru" target="_blank" rel="noopener noreferrer">О конфиденциальности</a></p>
+  </form>
+  <div id="account-profile" hidden>
+    <dl class="account-details"><dt>Имя</dt><dd id="account-name"></dd><dt>Email</dt><dd id="account-email"></dd></dl>
+    <p id="email-state" class="auth-note"></p>
+    <div id="verification-actions">
+      <p class="auth-note">Откройте письмо от Podarkus и перейдите по ссылке, чтобы подтвердить адрес.</p>
+      <button class="auth-visibility" type="button" id="resend-verification">Отправить письмо ещё раз</button>
+      <button class="auth-visibility" type="button" id="refresh-verification">Я подтвердил email</button>
+    </div>
+    <div class="account-actions"><button class="button" type="button" id="account-gifts">Подобрать подарок ↗</button><button class="button outline" type="button" id="logout-button">Выйти</button></div>
+    <p class="auth-note">Вход сохраняется в этой вкладке до её закрытия. Анкета и история подборов к аккаунту пока не привязаны.</p>
+  </div>
+  <p class="auth-status" id="auth-status" role="status" aria-live="polite" aria-atomic="true">Подключаем сервис аккаунтов… Если загрузка не завершится, обновите страницу. Подбор подарков доступен без входа.</p>
+</dialog>
