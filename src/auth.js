@@ -13,7 +13,8 @@ try {
   // Let the SDK manage session tokens. Never persist passwords in application storage.
   const auth = initializeAuth(app, { persistence: browserSessionPersistence });
   auth.languageCode = 'ru';
-  const actions = { url: new URL('./', location.href).href };
+  // Email links always return to the authorized public site, including from a local preview.
+  const actions = { url: 'https://alexeiasamodurov-blip.github.io/podarkus/' };
   const provider = {
     async register(email, password, name) {
       const { user } = await createUserWithEmailAndPassword(auth, email, password);

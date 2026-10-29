@@ -660,7 +660,7 @@ document.getElementById('account-button').addEventListener('click', () => authMo
 // A failed script load must never cause a native form submission containing credentials.
 document.getElementById('auth-form').addEventListener('submit', event => event.preventDefault());
 const authScript = document.createElement('script');
-authScript.src = './assets/auth.js?v=3';
+authScript.src = './assets/auth.js?v=4';
 authScript.onerror = () => { document.getElementById('auth-status').textContent = 'Не удалось загрузить сервис аккаунтов. Обновите страницу. Подбор подарков доступен без входа.'; };
 document.body.appendChild(authScript);
 </script><script src="./assets/ai.js?v=1" defer></script></body></html>
