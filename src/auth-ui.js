@@ -8,15 +8,26 @@ export function authError(error) {
     'auth/weak-password': 'Используйте пароль от 10 символов. Лучше выбрать длинную фразу.',
     'auth/password-does-not-meet-requirements': 'Пароль не соответствует требованиям. Используйте не менее 10 символов.',
     'auth/too-many-requests': 'Слишком много попыток. Подождите немного и повторите.',
+    'auth/quota-exceeded': 'Сервис исчерпал лимит отправки писем. Попробуйте позже; повторные нажатия сейчас не помогут.',
     'auth/network-request-failed': 'Нет связи с сервисом аккаунтов. Проверьте интернет и повторите.',
     'auth/user-disabled': 'Этот аккаунт недоступен.',
     'auth/operation-not-allowed': 'Регистрация временно недоступна. Попробуйте позже.',
-    'auth/unauthorized-continue-uri': 'Не удалось отправить письмо. Попробуйте позже.',
+    'auth/unauthorized-continue-uri': 'Адрес возврата на сайт не разрешён в настройках отправки писем. Сообщите об этой ошибке владельцу сайта.',
+    'auth/invalid-continue-uri': 'Неверно настроен адрес возврата из письма. Сообщите об этой ошибке владельцу сайта.',
     'auth/expired-action-code': 'Ссылка устарела. Запросите новое письмо.',
     'auth/user-token-expired': 'Сессия истекла. Войдите ещё раз.',
     'auth/invalid-user-token': 'Сессия истекла. Войдите ещё раз.'
   };
   return messages[error?.code] || 'Не удалось выполнить действие. Попробуйте ещё раз.';
+}
+
+export function verificationError(error) {
+  const reason = authError(error);
+  const safeCodes = ['auth/network-request-failed', 'auth/too-many-requests', 'auth/quota-exceeded',
+    'auth/unauthorized-continue-uri', 'auth/invalid-continue-uri', 'auth/invalid-email',
+    'auth/user-token-expired', 'auth/invalid-user-token', 'auth/user-disabled'];
+  return 'Письмо подтверждения не отправлено. ' + reason +
+    (safeCodes.includes(error?.code) ? ' Код ошибки: ' + error.code + '.' : '');
 }
 
 export function mountAuth(doc) {
@@ -140,9 +151,9 @@ export function mountAuth(doc) {
           try {
             await provider.verify(user);
             verifyAgainAt = Date.now() + 60000;
-            notice += ' Подтвердите email по ссылке в письме.';
-          } catch {
-            notice += ' Письмо подтверждения не отправлено. Попробуйте кнопку «Отправить письмо ещё раз».';
+            notice += ' Запрос на отправку принят. В письме будет ссылка подтверждения, а не цифровой код. Доставка может занять несколько минут.';
+          } catch (error) {
+            notice += ' ' + verificationError(error) + ' Повторно создавать аккаунт не нужно.';
           }
           message(notice);
         } else {
@@ -159,8 +170,10 @@ export function mountAuth(doc) {
   $('#resend-verification').addEventListener('click', () => void run(async () => {
     if (!user) return;
     if (Date.now() < verifyAgainAt) { message('Письмо уже отправлено. Повторить отправку можно через минуту.'); return; }
-    await provider.verify(user); verifyAgainAt = Date.now() + 60000;
-    message('Письмо отправлено. Откройте ссылку в нём и нажмите «Я подтвердил email».');
+    try {
+      await provider.verify(user); verifyAgainAt = Date.now() + 60000;
+      message('Сервис принял запрос на отправку. Это ещё не подтверждает доставку в почтовый ящик. В письме будет ссылка; откройте её и нажмите «Я подтвердил email».');
+    } catch (error) { message(verificationError(error), true); }
   }));
   $('#refresh-verification').addEventListener('click', () => void run(async () => {
     if (!user) return;

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { JSDOM } from 'jsdom';
-import { mountAuth, authError } from '../src/auth-ui.js';
+import { mountAuth, authError, verificationError } from '../src/auth-ui.js';
 
 const markup = await readFile(new URL('../src/auth-dialog.html', import.meta.url), 'utf8');
 const tick = () => new Promise(resolve => setTimeout(resolve, 0));
@@ -65,6 +65,30 @@ test('failed email delivery does not undo successful registration', async () => 
   assert.equal(f.$('#account-profile').hidden, false);
   assert.match(f.$('#auth-status').textContent, /Аккаунт создан/);
   assert.match(f.$('#auth-status').textContent, /Письмо подтверждения не отправлено/);
+  assert.match(f.$('#auth-status').textContent, /auth\/network-request-failed/);
+  assert.match(f.$('#auth-status').textContent, /Повторно создавать аккаунт не нужно/);
+});
+
+test('verification quota errors remain visible while the account stays signed in', async () => {
+  const f = fixture({ async verify() { throw { code: 'auth/quota-exceeded' }; } }, { email: 'gift@example.test' });
+  f.click('#resend-verification'); await tick();
+  assert.equal(f.$('#account-profile').hidden, false);
+  assert.equal(f.$('#auth-status').classList.contains('is-error'), true);
+  assert.match(f.$('#auth-status').textContent, /лимит отправки писем/);
+  assert.match(f.$('#auth-status').textContent, /auth\/quota-exceeded/);
+});
+
+test('resend success describes provider acceptance without claiming inbox delivery', async () => {
+  const f = fixture({}, { email: 'gift@example.test' });
+  f.click('#resend-verification'); await tick();
+  assert.match(f.$('#auth-status').textContent, /ещё не подтверждает доставку/);
+  f.click('#resend-verification'); await tick();
+  assert.equal(f.calls.filter(c => c[0] === 'verify').length, 1);
+});
+
+test('verification failures never expose unknown raw error content', () => {
+  assert(!verificationError({ code: 'private-value', message: 'secret-token' }).includes('private-value'));
+  assert(!verificationError({ message: 'secret-token' }).includes('secret-token'));
 });
 test('failed login leaves no profile and clears password', async () => {
   const f = fixture({ async login() { throw { code: 'auth/invalid-credential' }; } });
