@@ -40,8 +40,8 @@ function setup(options = {}) {
   return { run: (changes) => handler(request(changes), env), handler, env, calls: () => calls };
 }
 
-test('AI catalogue retains exactly 500 unique ideas', () => {
-  assert.equal(data.gifts.length, 500); assert.equal(new Set(data.gifts.map(g => g.id)).size, 500);
+test('AI catalogue retains exactly 1537 unique ideas', () => {
+  assert.equal(data.gifts.length, 1537); assert.equal(new Set(data.gifts.map(g => g.id)).size, 1537);
 });
 test('AI candidate widening retains price, age and explicit exclusions', () => {
   const query = { ...answers, age_group: 'child', budget: 1500, interests: 'не любит спорт; рисует', gift_kind: 'item' };

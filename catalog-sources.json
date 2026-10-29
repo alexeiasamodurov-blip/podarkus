@@ -1,0 +1,416 @@
+{
+  "checked_on": "2026-10-29",
+  "scope": "Идеи по направлениям соцсетей; не рейтинг продаж и не подтверждение наличия в России. Цены редакционные.",
+  "sources": {
+    "tiktok-holiday": {
+      "title": "TikTok: праздничные покупки 2026",
+      "url": "https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en",
+      "published": "2026-10-14",
+      "scope": "США; направления: коллекционирование, украшения, игры, праздничный декор."
+    },
+    "tiktok-home-cafe": {
+      "title": "TikTok Next 2026: домашняя кофейня",
+      "url": "https://ads.tiktok.com/business/en-US/next",
+      "published": "2026",
+      "scope": "Тематический сигнал cafeathome, а не рейтинг конкретных товаров."
+    },
+    "pinterest-2026": {
+      "title": "Pinterest Predicts 2026: идеи для творчества",
+      "url": "https://create.pinterest.com/blog/2026-pinterest-predicts-trends-and-content-ideas/",
+      "published": "2026",
+      "scope": "Прогноз направлений Pen Pals, Glamoratti, Cool Blue; не продажи в России."
+    },
+    "squishy-2026": {
+      "title": "EL PAÍS: сквиши-пельмешки в TikTok",
+      "url": "https://elpais.com/escaparate/estilo-de-vida/2026-05-02/dumpling-squishy.html",
+      "published": "2026-05-02",
+      "scope": "Редакционный материал о конкретном формате коллекционной игрушки."
+    },
+    "social-collectibles": {
+      "title": "GiftList: подарочные тренды TikTok",
+      "url": "https://giftlist.com/blog/how-tiktok-shapes-gift-trends-in-2025",
+      "published": "2026-09-30",
+      "scope": "Вторичный обзор Labubu, Jellycat и других социальных подарочных направлений."
+    }
+  },
+  "gifts": {
+    "idea-501": {
+      "source_id": "social-collectibles",
+      "product_url": "https://www.popmart.com/us/products/1739",
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-502": {
+      "source_id": "social-collectibles",
+      "product_url": "https://us.jellycat.com/jellycat-bag-charm/",
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-503": {
+      "source_id": "social-collectibles",
+      "product_url": "https://www.sonnyangel.com/en/products/mini-figure-hippers/",
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-504": {
+      "source_id": "tiktok-holiday",
+      "product_url": "https://www.sonnyangel-france.com/collections/hippers",
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-505": {
+      "source_id": "squishy-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-506": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": "https://owalalife.com/products/freesip",
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-507": {
+      "source_id": "pinterest-2026",
+      "product_url": "https://www.baggu.com/collections/standard-baggu",
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-508": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-509": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-510": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-511": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-512": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-513": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-514": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-515": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-516": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-517": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-518": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-519": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-520": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-521": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-522": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-523": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-524": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-525": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-526": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-527": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-528": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-529": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-530": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-531": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-532": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-533": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-534": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-535": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-536": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-537": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-538": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-539": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-540": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-541": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-542": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-543": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-544": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-545": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-546": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-547": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-548": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-549": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-550": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-551": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-552": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-553": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-554": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-555": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-556": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-557": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-558": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-559": {
+      "source_id": "tiktok-holiday",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-560": {
+      "source_id": "tiktok-home-cafe",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-561": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-562": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    },
+    "idea-563": {
+      "source_id": "pinterest-2026",
+      "product_url": null,
+      "checked_on": "2026-10-29",
+      "relation": "editorial_inspiration"
+    }
+  }
+}

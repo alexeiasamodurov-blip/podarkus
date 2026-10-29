@@ -8,9 +8,19 @@ export function createPodarkusLocal(data, aiCandidates = false) {
   const word = '[\\p{L}\\p{N}_]';
   const boundary = `(?:(?<!${word})(?=${word})|(?<=${word})(?!${word}))`;
   const rx = (source, flags = '') => new RegExp(source.replaceAll('\\b',boundary).replaceAll('\\w',word), 'u'+flags);
+  // Literal keyword lookup avoids compiling thousands of Unicode regexes on a cold start.
+  const wordBefore = /[\p{L}\p{N}_]$/u, wordAfter = /^[\p{L}\p{N}_]/u;
   const aliasRx = alias => {
-    const value = norm(alias), prefix = value.endsWith('*');
-    return rx('(?<!\\w)'+escape(value.replace(/\*+$/,''))+(prefix ? '\\w*' : '(?!\\w)'));
+    const value = norm(alias), prefix = value.endsWith('*'), needle = value.replace(/\*+$/,'');
+    const exec = text => {
+      let index = text.indexOf(needle);
+      while (index !== -1) {
+        if (!wordBefore.test(text.slice(0,index)) && (prefix || !wordAfter.test(text.slice(index+needle.length)))) return {index};
+        index = text.indexOf(needle,index+1);
+      }
+      return null;
+    };
+    return {exec, test:text=>exec(text)!==null};
   };
   const negativeRx = rx(data.negative_pattern);
   const noExclusionRx = rx(data.no_exclusion_pattern, 'g');
@@ -118,7 +128,7 @@ export function createPodarkusLocal(data, aiCandidates = false) {
     const warnings=[];
     if (!positive.size) warnings.push(data.messages.unknown);
     if (restrictions || ruleIds.size) warnings.push(data.messages.exclusions);
-    return {items:ranked.slice(0,aiCandidates ? 500 : 6),total_matches:ranked.length,catalog_count:data.config.gift_count,
+    return {items:ranked.slice(0,aiCandidates ? data.gifts.length : 6),total_matches:ranked.length,catalog_count:data.config.gift_count,
       recognized_interests:sorted(positive).map(t=>data.labels[t]),negative_interests:sorted(negative).map(t=>data.labels[t]),
       recognized_details:matchedDetails.filter(d=>!blockedTags.has(d.category)).map(d=>d.label),
       applied_exclusions:sorted(ruleIds).map(id=>data.rule_labels[id]),warnings,price_note:data.messages.price,
@@ -133,4 +143,3 @@ export function createPodarkusLocal(data, aiCandidates = false) {
     }
   };
 }
-
