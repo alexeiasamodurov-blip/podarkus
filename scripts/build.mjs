@@ -11,3 +11,8 @@ await build({
   format: 'iife', target: ['es2020'], outfile: 'assets/auth.js',
   legalComments: 'eof', define: { 'PODARKUS_FIREBASE_CONFIG': JSON.stringify(config) }
 });
+const ai = JSON.parse(await readFile('ai-config.json', 'utf8'));
+if (!/^https:\/\/podarkus-ai\.[a-z0-9-]+\.workers\.dev$/.test(ai.endpoint)) throw Error('Set the deployed Podarkus AI HTTPS endpoint before publishing');
+await build({ entryPoints: ['src/ai.js'], bundle: true, minify: true, format: 'iife', target: ['es2020'], outfile: 'assets/ai.js',
+  define: { PODARKUS_AI_ENDPOINT: JSON.stringify(ai.endpoint) }
+});

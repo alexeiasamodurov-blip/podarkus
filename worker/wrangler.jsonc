@@ -1,0 +1,19 @@
+{
+  "name": "podarkus-ai",
+  "main": "index.js",
+  "account_id": "68f27338e5734d59e7af194f55412457",
+  "compatibility_date": "2026-10-29",
+  "workers_dev": true,
+  "preview_urls": false,
+  "ai": { "binding": "AI" },
+  "vars": {
+    "ALLOWED_ORIGIN": "https://alexeiasamodurov-blip.github.io",
+    "FIREBASE_PROJECT_ID": "podarkus-1b631"
+  },
+  "ratelimits": [{
+    "name": "USER_LIMIT",
+    "namespace_id": "2026102901",
+    "simple": { "limit": 3, "period": 60 }
+  }],
+  "observability": { "enabled": false }
+}

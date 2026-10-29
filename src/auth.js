@@ -30,6 +30,9 @@ try {
     async refresh(user) { await reload(user); return auth.currentUser; }
   };
   await auth.authStateReady();
+  window.podarkusIdentity = {
+    async getToken() { return auth.currentUser ? auth.currentUser.getIdToken() : null; }
+  };
   controller.connect(provider, auth.currentUser);
   onAuthStateChanged(auth, user => controller.setUser(user));
 } catch {
